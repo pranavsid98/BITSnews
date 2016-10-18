@@ -1,4 +1,4 @@
-
+-
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
@@ -105,7 +105,7 @@
                   </div>
                  <div class="col-md-4 text-center" style="padding-bottom:10px;">
                       
-                      <p style="color: white; font-family: 'Oswald', sans-serif; text-weight: 400, text-height: 20px;">{{ date_list | date:"D d M Y"  }}</p>
+                      <p style="color: white; font-family: 'Oswald', sans-serif; font-weight: 400; font-size: 22px;">{{ date_list | date:"D d M Y"  }}</p>
                         
                  </div>
                 </div>
@@ -133,7 +133,7 @@
 	<img class="bdr" src="{{ article.article_image }}">
 </div>
 <div class="col-xs-14 col-md-12 col-lg-12 art-txt text-left">
-	<p>{{ article.article_text }}</p>   
+	<p>{{ article.article_text|linebreaksbr}}</p>   
 	</div>
  
 <!-- /END THE FEATURETTES -->
@@ -146,7 +146,7 @@
     <img class="foot-pic"src="{% static 'newshome/images/oasislogo.jpg' %}">
   </div>
   <div class="col-md-4 text-left">
-    <a href="https://www.bits-oasis.org/" style="text-decoration: none;"><p class="foot-link">Link to the Official Oasis Website</p></a>
+    <a href="https://www.google.co.in/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwi_v5_16OPPAhVJjFQKHRHLDqYQFggdMAA&url=http%3A%2F%2Fwww.bits-oasis.org%2F&usg=AFQjCNFl6w_58TsBxfxb3KjUDAu_SNQo9Q&sig2=RsUrUh7gYE8rMcJfwKSMvA" target="_blank" style="text-decoration: none;"><p class="foot-link">Link to the Official Oasis Website</p></a>
   </div>
   <div class="col-md-4 text-right">
     <p style="padding-top:10px;"><a class="abt-us" href="../aboutus/" >About Us</a></p>

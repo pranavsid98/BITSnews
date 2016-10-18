@@ -113,7 +113,7 @@
                   </div>
                   <div class="col-md-4 text-center" style="padding-bottom:10px;">
                       
-                      <p style="color: white; font-family: 'Oswald', sans-serif; text-weight: 400, text-height: 20px;">{{ date_list | date:"D d M Y"  }}</p>
+                      <p style="color: white; font-family: 'Oswald', sans-serif; font-weight: 400; font-size: 22px;">{{ date_list | date:"D d M Y"  }}</p>
                         
                  </div>
                 </div>
@@ -299,14 +299,14 @@
     <div class="row row-offcanvas row-offcanvas-right media col-lg-12 remove-all-margin-padding">
        <div class="col-xs-9 col-lg-6 text-center video">    
           {% for video in video_list %}
-      <iframe width="600" height="495"
+      <iframe width="580" height="495"
 src="{{ video.video_video }}" allowfullscreen="allowfullscreen" mozallowfullscreen="mozallowfullscreen" msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen" webkitallowfullscreen="webkitallowfullscreen">
 </iframe>
 {% endfor %}
 </div>
   <div class="col-xs-9 col-lg-6 text-center pic">
     
-<div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 600px; height:495px;">
+<div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 580px; height:495px;">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -317,7 +317,8 @@ src="{{ video.video_video }}" allowfullscreen="allowfullscreen" mozallowfullscre
     <div class="item active">
       {% for picture in picture_list %}
       {% if picture.id == 2 %}
-      <img class="first-slide slide" src="{{ picture.pics_image }}" onClick = "on_clicked(this.id)" alt="First slide">
+      <div class="first-slide slide" style="background-image: url({{ picture.pics_image }}); background-size: 100% 100%;" >
+      </div>
       {% endif %}
       {% endfor %}
       <div class="container">
@@ -329,7 +330,8 @@ src="{{ video.video_video }}" allowfullscreen="allowfullscreen" mozallowfullscre
     <div class="item">
       {% for picture in picture_list %}
       {% if picture.id == 3 %}
-      <img class="second-slide slide" src="{{ picture.pics_image }}" onClick = "on_clicked(this.id)" alt="Second slide">
+      <div class="first-slide slide" style="background-image: url({{ picture.pics_image }}); background-size: 100% 100%;" >
+      </div>
       {% endif %}
       {% endfor %}
       <div class="container">
@@ -341,7 +343,8 @@ src="{{ video.video_video }}" allowfullscreen="allowfullscreen" mozallowfullscre
     <div class="item">
       {% for picture in picture_list %}
       {% if picture.id == 4 %}
-    <img class="third-slide slide" src="{{ picture.pics_image }}" onClick = "on_clicked(this.id)" alt="Third slide">
+    <div class="first-slide slide" style="background-image: url({{ picture.pics_image }}); background-size: 100% 100%;" >
+      </div>
     {% endif %}
     {% endfor %}
     <div class="container">
@@ -425,7 +428,7 @@ src="{{ video.video_video }}" allowfullscreen="allowfullscreen" mozallowfullscre
     <img class="foot-pic"src="{% static 'newshome/images/oasislogo.jpg' %}">
   </div>
   <div class="col-md-4 text-left">
-    <a href="https://www.bits-oasis.org/" style="text-decoration: none;"><p class="foot-link">Link to the Official Oasis Website</p></a>
+    <a href="https://www.google.co.in/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwi_v5_16OPPAhVJjFQKHRHLDqYQFggdMAA&url=http%3A%2F%2Fwww.bits-oasis.org%2F&usg=AFQjCNFl6w_58TsBxfxb3KjUDAu_SNQo9Q&sig2=RsUrUh7gYE8rMcJfwKSMvA" target="_blank" style="text-decoration: none;"><p class="foot-link">Link to the Official Oasis Website</p></a>
   </div>
   <div class="col-md-4 text-right">
     <p style="padding-top:10px;"><a class="abt-us" href="../aboutus/" >About Us</a></p>

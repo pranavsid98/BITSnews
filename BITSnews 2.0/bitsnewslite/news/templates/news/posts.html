@@ -11,7 +11,7 @@
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400|Roboto:400,500" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'news/Theme.css' %}">
-  <link rel="stylesheet" href="[% static 'news/post.css' %}">
+  <link rel="stylesheet" href="{% static 'news/post.css' %}">
 </head>
 <body>
   <nav class="navbar navbar-inverse" id="date_navbar">
@@ -85,84 +85,35 @@
             RECENT POSTS
           </p>
           <div class="break4"></div>
+          {% for article in article_list %}
           <div class="col-lg-12 col-xs-12 article">
             <div class="col-lg-12 col-xs-12 nopadding article_img_container pointer_hover">
-              <a href="#"><img class="article_img" src="http://i.imgur.com/V5fwfvNb.jpg" alt="img" /></a>
+              <a href="#"><img class="article_img" src="{{ article.article_image }}" alt="img" /></a>
             </div>
             <div class="col-lg-11 col-xs-11 article_text nopadding pointer_hover">
               <div class="categories_small">
                 <p class="categories"> Random 1</p>
                 <p class="categories"> Random 2</p>
               </div>
-              <a href="post.html"><h3 class="post-title">THIS is a title</h3></a>
+              <a href="post.html"><h3 class="post-title">{{ article.article_title }}</h3></a>
                 <div class="entry-meta">
 					            <span class="hover1">
                          <span class="glyphicon glyphicon-calendar"></span>
-                         <a class="url fn n" href="">October 31,2016</a>
+                         <a class="url fn n" href="">{{ article.article_date|date:"d M Y" }}</a>
                        </span>
                        <span class="hover1">
                            <span class="glyphicon glyphicon-user"></span>
-                           <a class="url fn n" href="">BitsNewsLite</a>
+                           <a class="url fn n" href="">{{ article.article_author }}</a>
                        </span>
     	            </div>
-                      <p class="post_content">daw shfu aw hf uioq whfownf liqwbhf ouiqwhfio qwhifnqwi fnoqwin fi
-                        afwf eqfef qefq3 efq efq efdqe qj qwwgdqwty gduyq dyuqg uyq q qyu egqe wuegtd qu
-                        uydguwy gduyqg fyuq gyfuq guyfgq eyu gqeuy gfye gfuyegfuyeg fuy uyyfuy</p>
+                      <p class="post_content">{{ article.article_summary }}</p>
                       </div>
                       <div class="break4"></div>
                     </div>
-      <div class="col-lg-12 col-xs-12 article">
-      <div class="col-lg-12 col-xs-12 nopadding article_img_container">
-        <a href="#"><img class="article_img" src="http://i.imgur.com/wre2PiR.jpg" alt="img" /></a>
-      </div>
-      <div class="col-lg-11 col-xs-11 article_text nopadding pointer_hover">
-        <div class="categories_small">
-          <p class="categories"> Random 1</p>
-          <p class="categories"> Random 2</p>
-        </div>
-        <a href="#"><h3 class="post-title">THIS is a title</h3></a>
-          <div class="entry-meta">
-                <span class="hover1">
-                   <span class="glyphicon glyphicon-calendar"></span>
-                   <a class="url fn n" href="">October 31,2016</a>
-                 </span>
-                 <span class="hover1">
-                     <span class="glyphicon glyphicon-user"></span>
-                     <a class="url fn n" href="">BitsNewsLite</a>
-                 </span>
-            </div>
-                <p class="post_content">daw shfu aw hf uioq whfownf liqwbhf ouiqwhfio qwhifnqwi fnoqwin fi
-                  afwf eqfef qefq3 efq efq efdqe qj qwwgdqwty gduyq dyuqg uyq q qyu egqe wuegtd qu
-                  uydguwy gduyqg fyuq gyfuq guyfgq eyu gqeuy gfye gfuyegfuyeg fuy uyyfuy</p>
-                </div>
-          <div class="break4"></div>
-      </div>
-      <div class="col-lg-12 col-xs-12 article">
-      <div class="col-lg-12 col-xs-12 nopadding article_img_container">
-        <a href="#"><img class="article_img" src="http://i.imgur.com/XJU12vJ.jpg" alt="img" /></a>
-      </div>
-      <div class="col-lg-11 col-xs-11 article_text nopadding pointer_hover">
-        <div class="categories_small">
-          <p class="categories"> Random 1</p>
-          <p class="categories"> Random 2</p>
-        </div>
-        <a href="#"><h3 class="post-title">THIS is a title</h3></a>
-          <div class="entry-meta">
-                <span class="hover1">
-                   <span class="glyphicon glyphicon-calendar"></span>
-                   <a class="url fn n" href="">October 31,2016</a>
-                 </span>
-                 <span class="hover1">
-                     <span class="glyphicon glyphicon-user"></span>
-                     <a class="url fn n" href="">BitsNewsLite</a>
-                 </span>
-            </div>
-                <p class="post_content">daw shfu aw hf uioq whfownf liqwbhf ouiqwhfio qwhifnqwi fnoqwin fi
-                  afwf eqfef qefq3 efq efq efdqe qj qwwgdqwty gduyq dyuqg uyq q qyu egqe wuegtd qu
-                  uydguwy gduyqg fyuq gyfuq guyfgq eyu gqeuy gfye gfuyegfuyeg fuy uyyfuy</p>
-                </div>
       <div class="break4"></div>
+      {% endfor %}
       </div>
+
     </div>
       </div>
       <div class="col-lg-4 col-xs-12 nopadding">

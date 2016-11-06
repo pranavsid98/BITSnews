@@ -11,7 +11,7 @@
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400|Roboto:400,500" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'news/Theme.css' %}">
-  <link rel="stylesheet" href="[% static 'news/event.css' %}">
+  <link rel="stylesheet" href="{% static 'news/event.css' %}">
   <link rel="stylesheet" href="{% static 'news/gall.css' %}">
   <script type="text/javascript" src="{% static 'news/gall.js' %}"></script>
 </head>
@@ -109,81 +109,30 @@ edqw fqwfqwfqw fqwfqw fqwfqw diuqw hfui qwgfu ibouchqwui ghuh
         <div class="event-day">
           <div class="col-lg-2 col-xs-3 nopadding text-center"><p class="event-date">OCT 31</p></div>
           <div class="event-events col-lg-10 col-xs-9 nopadding">
+            
+<!-- single item -->
+<!-- single item -->
+            {% for event in events_list %}
             <div class="col-lg-12 col-xs-12 event-event">
-              <a href="#"><h2 class="event-title hover1">This is an event title</h2></a>
+              <h2 class="event-title">{{ event.event_title }}</h2>
               <div class="entry-meta">
-                <div class="event-details event-meta1">
-                  <span class="hover1">
-                    <span class="glyphicon glyphicon-calendar"></span>
-                    <a class="url fn n" href="">October 31,2016</a>
-                  </span>
-                  <span class="hover1 event-meta1">
-                    <span class="glyphicon glyphicon-time"></span>
-                    <a class="url fn n" href="">9:00PM</a>
-                  </span>
-                  <span class="hover1 event-meta1">
-                    <span class="glyphicon glyphicon-flag"></span>
-                    <a class="url fn n" href="">rotunda</a>
-                  </span>
+                <div class="event-details">
+                  <span class="glyphicon glyphicon-calendar"></span>
+                  <a class="url fn n" href="">{{ event.event_date|date:"d M Y" }}</a>
+                  <span class="glyphicon glyphicon-time"></span>
+                  <a class="url fn n" href="">{{ event.event_date|time:"H:i" }}</a>
+                  <span class="glyphicon glyphicon-flag"></span>
+                  <a class="url fn n" href="">{{ event.event_location }}</a>
                 </div>
               </div>
               <div class="event-desc">
-                <p>you can do Y and Z in this event have fun.this event is hosted by club X.</p>
+                <p>{{ event.event_summary }}</p>
               </div>
               <div class="event-img">
-                <img class="fit-auto photo_gallery" src="test_img.jpg" alt="" />
+                <img class="fit-auto photo_gallery" src="{{ event.event_image }}" alt="" />
               </div>
             </div>
-<!-- single item -->
-<!-- single item -->
-            <div class="col-lg-12 col-xs-12 event-event">
-              <h2 class="event-title">This is an event title</h2>
-              <div class="entry-meta">
-                <div class="event-details">
-                  <span class="glyphicon glyphicon-calendar"></span>
-                  <a class="url fn n" href="">October 31,2016</a>
-                  <span class="glyphicon glyphicon-time"></span>
-                  <a class="url fn n" href="">9:00PM</a>
-                  <span class="glyphicon glyphicon-flag"></span>
-                  <a class="url fn n" href="">rotunda</a>
-                </div>
-              </div>
-              <div class="event-desc">
-                <p>you can do Y and Z in this event have fun.this event is hosted by club X.</p>
-              </div>
-            </div>
-            <div class="col-lg-12 col-xs-12 event-event">
-              <h2 class="event-title">This is an event title</h2>
-              <div class="entry-meta">
-                <div class="event-details">
-                  <span class="glyphicon glyphicon-calendar"></span>
-                  <a class="url fn n" href="">October 31,2016</a>
-                  <span class="glyphicon glyphicon-time"></span>
-                  <a class="url fn n" href="">9:00PM</a>
-                  <span class="glyphicon glyphicon-flag"></span>
-                  <a class="url fn n" href="">rotunda</a>
-                </div>
-              </div>
-              <div class="event-desc">
-                <p>you can do Y and Z in this event have fun.this event is hosted by club X.</p>
-              </div>
-            </div>
-            <div class="col-lg-12 col-xs-12 event-event">
-              <h2 class="event-title">This is an event title</h2>
-              <div class="entry-meta">
-                <div class="event-details">
-                  <span class="glyphicon glyphicon-calendar"></span>
-                  <a class="url fn n" href="">October 31,2016</a>
-                  <span class="glyphicon glyphicon-time"></span>
-                  <a class="url fn n" href="">9:00PM</a>
-                  <span class="glyphicon glyphicon-flag"></span>
-                  <a class="url fn n" href="">rotunda</a>
-                </div>
-              </div>
-              <div class="event-desc">
-                <p>you can do Y and Z in this event have fun.this event is hosted by club X.</p>
-              </div>
-            </div>
+            {% endfor %}
             <!--  -->
             <!--  -->
           </div>

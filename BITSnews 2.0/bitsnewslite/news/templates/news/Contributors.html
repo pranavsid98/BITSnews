@@ -11,7 +11,7 @@
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400|Roboto:400,500" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'news/Theme.css' %}">
-  <link rel="stylesheet" href="[% static 'news/About.css' %}">
+  <link rel="stylesheet" href="{% static 'news/About.css' %}">
 </head>
 <body>
   <nav class="navbar navbar-inverse" id="date_navbar">
@@ -87,7 +87,7 @@
             <div class="col-md-3 col-xs-12 col-xs-push-0 col-lg-push-0">
               <div class="developers">
                 <div class="img_dev">
-                  <img class="fit_full" src="test_img.jpg" alt="" />
+                  <img class="fit_full" src="{% static 'news/images/test_img.jpg' %}" alt="" />
                 </div>
                 <div class="text_dev">
                   <p class="Name">
@@ -102,7 +102,7 @@
             <div class="col-md-3 col-xs-12 col-xs-push-0 col-lg-push-0">
               <div class="developers">
                 <div class="img_dev">
-                  <img class="fit_full" src="test_img.jpg" alt="" />
+                  <img class="fit_full" src="{% static 'news/images/test_img.jpg' %}" alt="" />
                 </div>
                 <div class="text_dev text-center">
                   <p class="Name">
@@ -117,7 +117,7 @@
             <div class="col-md-3 col-xs-12 col-xs-push-0 col-lg-push-0">
               <div class="developers">
                 <div class="img_dev">
-                  <img class="fit_full" src="test_img.jpg" alt="" />
+                  <img class="fit_full" src="{% static 'news/images/test_img.jpg' %}" alt="" />
                 </div>
                 <div class="text_dev text-center">
                   <p class="Name">
@@ -149,7 +149,7 @@
 
               <div class="col-lg-4 col-xs-12 col-xs-push-0 col-lg-push-0">
                 <div class="img_contributor">
-                  <img class="fit_full" src="test_img.jpg" alt="" />
+                  <img class="fit_full" src="{% static 'news/images/test_img.jpg' %}" alt="" />
                 </div>
               </div>
               <div class="col-lg-8 col-xs-12">

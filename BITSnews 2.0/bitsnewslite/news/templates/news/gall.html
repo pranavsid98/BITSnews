@@ -104,13 +104,13 @@
 
           <div class="col-lg-12 col-xs-12 img_container">
             <div class="break4"></div>
-          <img id="myImg" class="photo_gallery" src="test_img.jpg">
-          <img class="photo_gallery" src="test_img.jpg">
-          <img class="photo_gallery" src="test_img.jpg">
-          <img class="photo_gallery" src="test_img.jpg">
-          <img class="photo_gallery" src="test_img.jpg">
-          <img class="photo_gallery" src="test_img.jpg">
-          <img class="photo_gallery" src="test_img.jpg">
+            {% for pic in picture_list %}
+            {% if pic.id == 1 %}
+          <img id="myImg" class="photo_gallery" src="{{ pic.pics_image }}">
+          {% else %}
+          <img class="photo_gallery" src="{{ pic.pics_image }}">
+          {% endif %}
+          {% endfor %}
         <div class="break2"></div>
       </div>
     </div>

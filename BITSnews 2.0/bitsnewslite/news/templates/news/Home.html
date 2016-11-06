@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400|Roboto:400,500" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'news/Theme.css' %}">
-  <link rel="stylesheet" href="[% static 'news/Main.css' %}">
+  <link rel="stylesheet" href="{% static 'news/Main.css' %}">
   <script type="text/javascript" src="{% static 'news/Main.js' %}"></script>
   <link rel="stylesheet" href="{% static 'news/gall.css' %}">
   <script type="text/javascript" src="{% static 'news/gall.js' %}"></script>
@@ -389,7 +389,7 @@
               </div>
             </div>
             <div class="col-md-6 col-xs-12 nopadding heightauto">
-              {% for article in article_date %}
+              {% for article in article_list %}
               {% if article.id > 5 %}
               {% if article.id == 7 or article.id == 9 or article.id == 11 or article.id == 13 or article.id == 15 %}
               <div class="row_article">
@@ -468,7 +468,11 @@
               PHOTO OF THE WEEK
             </p>
             <div class="photo_week_box">
-              <img class="photo_week photo_gallery" src="test_img.jpg">
+              {% for pic in picture_list %}
+              {% if pic.id == 7 %}
+              <img class="photo_week photo_gallery" src="{{ pic.pics_image }}">
+              {% endif %}
+              {% endfor %}
             </div>
           </div>
           <div class="break0">
@@ -479,7 +483,9 @@
               VIDEO OF THE WEEK
             </p>
             <div class="video_week_box">
-              <iframe class="video_week" src="https://www.youtube.com/embed/-Bk1ybD9npc?&theme=dark&autoplay=0&autohide=2&showinfo=0&rel=0"frameborder="0" allowfullscreen></iframe>
+              {% for vid in video_list %}
+              <iframe class="video_week" src="{{ vid.video_video}}"frameborder="0" allowfullscreen></iframe>
+              {% endfor %}
             </div>
           </div>
 

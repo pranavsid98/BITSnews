@@ -1,0 +1,122 @@
+.categories_small{
+  margin-top: 5px;
+  width: auto;
+  margin-left: 5px;
+}
+.article{
+  height: auto;
+}
+.article:hover .article_img{
+    transform: scale(1.25);
+    -moz-transform: scale(1.25);
+    -webkit-transform: scale(1.25);
+    filter: blur(0px);
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+}
+.article:hover .article_text{
+    box-shadow: 12px 20px 11px -20px rgba(0, 0, 0, 0.75);
+}
+.article_img_container{
+  overflow: hidden;
+  border-radius: 4px;
+}
+.article_img{
+  width:100%;
+  height: auto;
+  filter: blur(1px);
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+}
+
+.article_text
+{
+  background-color: white;
+  margin: -10vh 3.6vw 20px;
+  padding: 20px 20px 0 0;
+  border-radius: 2px;
+  box-shadow: 12px 17px 11px -20px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+}
+.post-title{
+  padding: 0px 0px 0px 15px;
+  margin-top: 5px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  transition: color 0.3s ease-in-out;
+  -webkit-transition: color 0.3s ease-in-out;
+}
+.post-title:hover{
+  color: #E23D28;
+}
+.post_content{
+  padding: 10px 0px 0px 20px;
+}
+.entry-meta {
+    font-size: 15px;
+    padding: 0px 0px 0px 20px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 300;
+    color: #888;
+}
+@media screen and (min-width: 1200px) {
+  .article_text
+  {
+  background-color: white;
+  margin: -10vh 30px 20px;
+  padding: 20px 20px 0;
+  box-shadow: 12px 17px 11px -20px rgba(0, 0, 0, 0.75);
+  position: relative;
+  }
+}
+.post-title2{
+  padding: 0px 0px 0px 15px;
+  margin-top: 5px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 50px;
+  font-weight: 400;
+  color: #353839;
+  transition: color 0.3s ease-in-out;
+  -webkit-transition: color 0.3s ease-in-out;
+}
+.detail_1{
+  margin-bottom: 5px !important;
+  padding-bottom: 5px;
+}
+.date1{
+  border-right: thin solid #888;
+  padding-right: 5px;
+}
+.user1{
+  padding-left: 10px;
+  font-weight: 400 !important;
+}
+.categories_small{
+  margin-left: 10px;
+  margin-right: 0px;
+}
+.categories_top{
+  margin-left: 15px !important;
+}
+.article2{
+  height: auto;
+}
+.article_img_container2{
+  overflow: hidden;
+  border-radius: 0;
+}
+.article_img2{
+  width:100%;
+  height: auto;
+}
+.article_text2{
+  background-color: white;
+  border-radius: 2px;
+}
+.post_content{
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}

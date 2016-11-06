@@ -1,0 +1,102 @@
+.text_about{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 15px;
+}
+.developers{
+  position: relative;
+  margin: 5px 5px 2px 10px;
+  height: 250px !important;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+  transition: box-shadow 0.4s ease-in-out;
+}
+.developers:hover .img_dev{
+  opacity: 0.7;
+}
+.developers:hover .text_dev{
+  top: 50%;
+  height: 50%;
+}
+.developers:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+}
+.img_dev{
+  position: absolute;
+  z-index: 2;
+  top: 0%;
+  left: 0%;
+  height: 80%;
+  transition: opacity 0.4s ease-in-out;
+}
+.text_dev{
+  position: absolute;
+  top: 70%;
+  z-index: 3;
+  left: 0%;
+  width: 100%;
+  height: 30%;
+  padding-top: 8px;
+  background-color: white;
+  border-style: solid;
+  overflow: hidden;
+  border-width: thin thin thin thin;
+  border-color: #E5E4E2;
+  transition: height 0.4s ease-in-out, top 0.4s ease-in-out;
+}
+.Name{
+  font-family: 'Roboto', sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  color: #353839;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+.Details{
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  color: gray;
+}
+.contributor_box{
+  margin-left: 10px;
+  margin-right: 10px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+  transition: box-shadow 0.3s ease-in-out;
+  -webkit-transition: box-shadow 0.3s ease-in-out;
+}
+.contributor_box:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.contributor_box:hover .img_contributor{
+  opacity: 0.8;
+}
+.img_contributor{
+  height: auto;
+  width: 100%;
+  transition: opacity 0.3s ease-in-out;
+  -webkit-transition: opacity 0.3s ease-in-out;
+}
+.detail_contributor{
+  width: 100%;
+  height: auto;
+}
+.title_contributor{
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+.text_contributor{
+  opacity: 1;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  transition: opacity 0.3s ease-in-out;
+  -webkit-transition: opacity 0.3s ease-in-out;
+}

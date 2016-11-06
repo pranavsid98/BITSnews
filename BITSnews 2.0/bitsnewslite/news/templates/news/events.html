@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400|Roboto:400,500" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'news/Theme.css' %}">
+  <link rel="stylesheet" href="[% static 'news/event.css' %}">
+  <link rel="stylesheet" href="{% static 'news/gall.css' %}">
+  <script type="text/javascript" src="{% static 'news/gall.js' %}"></script>
+</head>
+<body>
+  <div id="myModal" class="modal">
+
+  <!-- The Close Button -->
+  <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+
+  <!-- Modal Content (The Image) -->
+  <img class="modal-content" id="img01">
+
+  <!-- Modal Caption (Image Text) -->
+  <div id="caption"></div>
+</div>
+<nav class="navbar navbar-inverse" id="date_navbar">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <p class="date_p">October 12, 2016</p>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="http://www.facebook.com" target="_blank" class="nopadding"><span class="icont_effect fb_effect"><i class="fa fa-facebook" aria-hidden="true"></i></span></a></li>
+      <li><a href="http://www.facebook.com" target="_blank" class="nopadding"><span class="icont_effect tw_effect"><i class="fa fa-twitter" aria-hidden="true"></i></span></a></li>
+      <li><a href="http://www.facebook.com" target="_blank" class="nopadding"><span class="icont_effect you_effect"><i class="fa fa-youtube-play" aria-hidden="true"></i></span></a></li>
+    </ul>
+  </div><!-- /.container-fluid -->
+</nav>
+<nav class="navbar navbar-default" id="#navbar_logo" style="margin-bottom: 0px; background-color: white; border: none;">
+  <div class="container text-center">
+    <a class="navbar-brand" href="..">
+      <img alt="BitsNewsLite" src="{% static 'news/images/logo.jpg' %}" style="margin: auto">
+    </a>
+  </div>
+
+    <!-- Brand and toggle get grouped for better mobile display -->
+</nav>
+<nav class="navbar navbar-default" id="navbar_main">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav" id="left_nav">
+        <li><a class="link active" href=".."><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
+          <li><a class="link" href="../posts/">Posts</a></li>
+          <li><a class="link" href="#">Events</a></li>
+          <li><a class="link" href="map.html">Campus Map</a></li>
+          <li><a class="link" href="../gallery/">Gallery</a></li>
+          <li><a class="link" href="essential.html">Essentials</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <form class="navbar-form navbar-left text-right">
+            <div class="form-group">
+              <input type="text" class="search_bar form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="search_btn btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+          </form>
+          <li><a class="link" href="../contributors/">Contributors</a></li>
+          <li><a class="link" href="../aboutus/">About Us</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!--- navend -->
+  <!--- navend -->
+  <div class="container">
+    <!-- <div class="row ticker">
+    <div class="ticker_title">
+    <p>
+    Latest news
+  </p>
+</div>
+<div class="col-lg-12 col-xs-7 ticker_text_container">
+<p class="ticker_text">
+edqw fqwfqwfqw fqwfqw fqwfqw diuqw hfui qwgfu ibouchqwui ghuh
+</p>
+</div>
+</div> -->
+<div class="row">
+  <div class="col-lg-12 col-xs-12 nopadding">
+    <div class="box_theme">
+      <p class="offset_title_box title">
+        EVENTS
+      </p>
+      <div class="col-lg-12 col-xs-12 event_container nopadding">
+        <div class="break4"></div>
+        <div class="event-day">
+          <div class="col-lg-2 col-xs-3 nopadding text-center"><p class="event-date">OCT 31</p></div>
+          <div class="event-events col-lg-10 col-xs-9 nopadding">
+            <div class="col-lg-12 col-xs-12 event-event">
+              <a href="#"><h2 class="event-title hover1">This is an event title</h2></a>
+              <div class="entry-meta">
+                <div class="event-details event-meta1">
+                  <span class="hover1">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                    <a class="url fn n" href="">October 31,2016</a>
+                  </span>
+                  <span class="hover1 event-meta1">
+                    <span class="glyphicon glyphicon-time"></span>
+                    <a class="url fn n" href="">9:00PM</a>
+                  </span>
+                  <span class="hover1 event-meta1">
+                    <span class="glyphicon glyphicon-flag"></span>
+                    <a class="url fn n" href="">rotunda</a>
+                  </span>
+                </div>
+              </div>
+              <div class="event-desc">
+                <p>you can do Y and Z in this event have fun.this event is hosted by club X.</p>
+              </div>
+              <div class="event-img">
+                <img class="fit-auto photo_gallery" src="test_img.jpg" alt="" />
+              </div>
+            </div>
+<!-- single item -->
+<!-- single item -->
+            <div class="col-lg-12 col-xs-12 event-event">
+              <h2 class="event-title">This is an event title</h2>
+              <div class="entry-meta">
+                <div class="event-details">
+                  <span class="glyphicon glyphicon-calendar"></span>
+                  <a class="url fn n" href="">October 31,2016</a>
+                  <span class="glyphicon glyphicon-time"></span>
+                  <a class="url fn n" href="">9:00PM</a>
+                  <span class="glyphicon glyphicon-flag"></span>
+                  <a class="url fn n" href="">rotunda</a>
+                </div>
+              </div>
+              <div class="event-desc">
+                <p>you can do Y and Z in this event have fun.this event is hosted by club X.</p>
+              </div>
+            </div>
+            <div class="col-lg-12 col-xs-12 event-event">
+              <h2 class="event-title">This is an event title</h2>
+              <div class="entry-meta">
+                <div class="event-details">
+                  <span class="glyphicon glyphicon-calendar"></span>
+                  <a class="url fn n" href="">October 31,2016</a>
+                  <span class="glyphicon glyphicon-time"></span>
+                  <a class="url fn n" href="">9:00PM</a>
+                  <span class="glyphicon glyphicon-flag"></span>
+                  <a class="url fn n" href="">rotunda</a>
+                </div>
+              </div>
+              <div class="event-desc">
+                <p>you can do Y and Z in this event have fun.this event is hosted by club X.</p>
+              </div>
+            </div>
+            <div class="col-lg-12 col-xs-12 event-event">
+              <h2 class="event-title">This is an event title</h2>
+              <div class="entry-meta">
+                <div class="event-details">
+                  <span class="glyphicon glyphicon-calendar"></span>
+                  <a class="url fn n" href="">October 31,2016</a>
+                  <span class="glyphicon glyphicon-time"></span>
+                  <a class="url fn n" href="">9:00PM</a>
+                  <span class="glyphicon glyphicon-flag"></span>
+                  <a class="url fn n" href="">rotunda</a>
+                </div>
+              </div>
+              <div class="event-desc">
+                <p>you can do Y and Z in this event have fun.this event is hosted by club X.</p>
+              </div>
+            </div>
+            <!--  -->
+            <!--  -->
+          </div>
+        </div>
+        <div class="break"></div>
+      </div>
+      <div class="break"></div>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>

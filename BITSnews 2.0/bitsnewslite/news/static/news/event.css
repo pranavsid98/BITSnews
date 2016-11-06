@@ -1,0 +1,46 @@
+.event-events{
+  padding-left: 20px !important;
+  border-left: thin solid #E33D28;
+}
+.event-event{
+  padding: 10px 0px;
+  border-bottom: thin solid #E4E3E2;
+}
+.event-day{
+  border-width: 0px;
+  border-right: thin solid #E5E4E2;
+}
+.event-date{
+  color: #939492;
+  font-size: 30px;
+  padding-top: 20px;
+}
+.event-title{
+  width: auto;
+  display: inline;
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+}
+.event-meta1{
+  padding-left: 5px;
+  padding-right: 5px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+}
+.entry-meta{
+  padding-top: 10px;
+}
+.event-details{
+  padding-bottom: 5px;
+}
+.event-desc{
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+.event-img{
+  width: 70%;
+  height: auto;
+}

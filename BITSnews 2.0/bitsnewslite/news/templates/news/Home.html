@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400|Roboto:400,500" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'news/Theme.css' %}">
+  <link rel="stylesheet" href="[% static 'news/Main.css' %}">
+  <script type="text/javascript" src="{% static 'news/Main.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'news/gall.css' %}">
+  <script type="text/javascript" src="{% static 'news/gall.js' %}"></script>
+</head>
+<body>
+  <div id="myModal" class="modal">
+
+  <!-- The Close Button -->
+  <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+
+  <!-- Modal Content (The Image) -->
+  <img class="modal-content" id="img01">
+
+  <!-- Modal Caption (Image Text) -->
+  <div id="caption"></div>
+</div>
+  <nav class="navbar navbar-inverse" id="date_navbar">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <p class="date_p">October 12, 2016</p>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="http://www.facebook.com" target="_blank" class="nopadding"><span class="icont_effect fb_effect"><i class="fa fa-facebook" aria-hidden="true"></i></span></a></li>
+        <li><a href="http://www.facebook.com" target="_blank" class="nopadding"><span class="icont_effect tw_effect"><i class="fa fa-twitter" aria-hidden="true"></i></span></a></li>
+        <li><a href="http://www.facebook.com" target="_blank" class="nopadding"><span class="icont_effect you_effect"><i class="fa fa-youtube-play" aria-hidden="true"></i></span></a></li>
+      </ul>
+    </div><!-- /.container-fluid -->
+  </nav>
+  <nav class="navbar navbar-default" id="#navbar_logo" style="margin-bottom: 0px; background-color: white; border: none;">
+    <div class="container text-center">
+      <a class="navbar-brand" href="#">
+        <img alt="BitsNewsLite" src="{% static 'news/images/logo.jpg' %}" style="margin: auto">
+      </a>
+    </div>
+      <!-- Brand and toggle get grouped for better mobile display -->
+  </nav>
+  <nav class="navbar navbar-default" id="navbar_main">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav" id="left_nav">
+          <li><a class="link active" href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
+          <li><a class="link" href="posts/">Posts</a></li>
+          <li><a class="link" href="event/">Events</a></li>
+          <li><a class="link" href="map.html">Campus Map</a></li>
+          <li><a class="link" href="gallery/">Gallery</a></li>
+          <li><a class="link" href="essential.html">Essentials</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <form class="navbar-form navbar-left text-right">
+            <div class="form-group">
+              <input type="text" class="search_bar form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="search_btn btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+          </form>
+          <li><a class="link" href="contributors/">Contributors</a></li>
+          <li><a class="link" href="aboutus/">About Us</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+  <!--- navend -->
+  <div class="container">
+      <div class="row ticker">
+        <div class="col-md-12 col-xs-12 nopadding">
+          <div class="ticker_text_container text-right">
+            <ul id="ticker1">
+              <li>event no#1</li>
+              <li>notif no#2 12345</li>
+              <li>another notification</li>
+              <li>damn another one?</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-xs-12 nopadding">
+          <div class="featured_title">
+            <p>
+              FEATURED
+            </p>
+          </div>
+          
+          <div class="col-md-6 col-xs-12 nopadding">
+            <div class="big_feature">
+              {% for article in article_list %}
+              {% if article.id == 1 %}
+              <div class="img_back_feature_big">
+                <img class="img_back" src="{{ article.article_image }}">
+              </div>
+              <div class="filter_feature_big filter_1 nomargin nopadding">
+              </div>
+              <div class="details_feature_big nomargin nopadding">
+                <div class="categories_big text-right">
+                  <p class="categories">
+                    Cat 1
+                  </p>
+                  <p class="categories">
+                    Cat 2
+                  </p>
+                </div>
+                <div class="content_big">
+                  <div class="title_big">
+                    <p class="shadow_text_effect">
+                      {{ article.article_title }}
+                    </p>
+                  </div>
+                  <div class="details_big">
+                    <p class="inline text_effect">
+                      <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                      {{ article.article_date|date:"d M Y" }}
+                    </p>
+                    <p class="inline">
+                      &nbsp;&nbsp;&nbsp;
+                    </p>
+                    <p class="inline text_effect">
+                      <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                      {{ article.article_author }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+          {% endfor %}
+          
+          <div class="col-md-6 col-xs-12 nopadding">
+            <div class="big_feature">
+              {% for article in article_list %}
+              {% if article.id == 2 %}
+              <div class="img_back_feature_big">
+                  <img class="img_back" src="{{ article.article_image }}">
+              </div>
+              <div class="filter_feature_big filter_5 nomargin nopadding">
+
+              </div>
+              <div class="details_feature_big nomargin nopadding">
+                <div class="categories_big text-right">
+                  <p class="categories">
+                    Cat 1
+                  </p>
+                  <p class="categories">
+                    Cat 2
+                  </p>
+                </div>
+                <div class="content_big">
+                  <div class="title_big">
+                    <p class="shadow_text_effect">
+                      article.article_title
+                    </p>
+                  </div>
+                  <div class="details_big">
+                    <p class="inline text_effect">
+                      <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                      {{ article.article_date|date:"d M Y" }}
+                    </p>
+                    <p class="inline">
+                      &nbsp;&nbsp;&nbsp;
+                    </p>
+                    <p class="inline text_effect">
+                      <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                      {{ article.article_author }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 col-xs-12 nopadding">
+          {% for article in article_list %}
+          {% if article.id == 3 %}
+          <div class="col-md-4 col-xs-12 nopadding">
+            <div class="small_feature">
+              <div class="img_back_feature_small">
+                  <img class="img_back" src="{{ article.article_image }}">
+              </div>
+              <div class="filter_feature_small filter_4 nomargin nopadding">
+
+              </div>
+              <div class="details_feature_small nomargin nopadding">
+                <div class="categories_small text-right">
+                  <p class="categories">
+                    Cat 1
+                  </p>
+                  <p class="categories">
+                    Cat 2
+                  </p>
+                </div>
+                <div class="content_small">
+                  <div class="title_small">
+                    <p class="shadow_text_effect">
+                      {{ article.article_title }}
+                    </p>
+                  </div>
+                  <div class="details_small">
+                    <p class="inline text_effect">
+                      <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                      {{ article.article_date|date:"d M Y" }}
+                    </p>
+                    <p class="inline">
+                      &nbsp;&nbsp;&nbsp;
+                    </p>
+                    <p class="inline text_effect">
+                      <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                      {{ article.article_author }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+          {% endfor %}
+          {% for article in article_list %}
+          {% if article.id == 4 %}
+          <div class="col-md-4 col-xs-12 nopadding">
+            <div class="small_feature">
+              <div class="img_back_feature_small">
+                  <img class="img_back" src="{{ article.article_image }}">
+              </div>
+              <div class="filter_feature_small filter_3 nomargin nopadding">
+
+              </div>
+              <div class="details_feature_small nomargin nopadding">
+                <div class="categories_small text-right">
+                  <p class="categories">
+                    Cat 1
+                  </p>
+                  <p class="categories">
+                    Cat 2
+                  </p>
+                </div>
+                <div class="content_small">
+                  <div class="title_small">
+                    <p class="shadow_text_effect">
+                      {{ article.article_title }}
+                    </p>
+                  </div>
+                  <div class="details_small">
+                    <p class="inline text_effect">
+                      <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                      {{ article.article_date|date:"d M Y" }}
+                    </p>
+                    <p class="inline">
+                      &nbsp;&nbsp;&nbsp;
+                    </p>
+                    <p class="inline text_effect">
+                      <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                      {{ article.article_author }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+          {% endfor %}
+          {% for article in article_list %}
+          {% if article.id == 5 %}
+          <div class="col-md-4 col-xs-12 nopadding">
+            <div class="small_feature">
+              <div class="img_back_feature_small">
+                  <img class="img_back" src="{{ article.article_image }}">
+              </div>
+              <div class="filter_feature_small filter_2 nomargin nopadding">
+
+              </div>
+              <div class="details_feature_small nomargin nopadding">
+                <div class="categories_small text-right">
+                  <p class="categories">
+                    Cat 1
+                  </p>
+                  <p class="categories">
+                    Cat 2
+                  </p>
+                </div>
+                <div class="content_small">
+                  <div class="title_small">
+                    <p class="shadow_text_effect">
+                      {{ article.article_title }}
+                    </p>
+                  </div>
+                  <div class="details_small">
+                    <p class="inline text_effect">
+                      <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                      {{ article.article_date|date:"d M Y" }}
+                    </p>
+                    <p class="inline">
+                      &nbsp;&nbsp;&nbsp;
+                    </p>
+                    <p class="inline text_effect">
+                      <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                      {{ article.article_author }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+          {% endfor %}
+        </div>
+    </div>
+    
+    <div class="break0"></div>
+    <div class="row">
+      <div class="col-md-8 col-xs-12 nopadding">
+        <div class="box_theme recent_articles heightauto">
+          <p class="offset_title_box title">
+            RECENT ARTICLES
+          </p>
+          <div class="break4"></div>
+          <div class="row1 heightauto">
+            <div class="col-md-6 col-xs-12 nopadding heightauto">
+              <div>
+                {% for article in article_list %}
+                {% if article.id > 5 %}
+                {% if article.id == 6 or article.id == 8 or article.id == 10 or article.id == 12 or article.id == 14 %}
+                <div class="row_article">
+                  <div class="categories_more">
+                    <p class="categories">
+                      Cat 1
+                    </p>
+                    <p class="categories">
+                      Cat 2
+                    </p>
+                  </div>
+                  <div class="row_more_img">
+                    <img class="row_img" src="{{ article.article_image }}" alt="" />
+                  </div>
+                  <div class="title_more">
+                    <p>
+                      {{ article.article_title }}
+                    </p>
+                  </div>
+                  <div class="more_details">
+                    <p>
+                      {{ article.article_summary }}
+                    </p>
+                  </div>
+                  <div class="break2">
+                  </div>
+                  <div class="more_author_date">
+                    <p class="inline more_author">
+                      {{ article.article_author }}
+                    </p>
+                    <p class="inline">
+                      |
+                    </p>
+                    <p class="inline more_date">
+                      {{ article.article_date|date:"d M Y" }}
+                    </p>
+                  </div>
+                </div>
+                {% endif %}
+                {% endif %}
+                {% endfor %}  
+              </div>
+            </div>
+            <div class="col-md-6 col-xs-12 nopadding heightauto">
+              {% for article in article_date %}
+              {% if article.id > 5 %}
+              {% if article.id == 7 or article.id == 9 or article.id == 11 or article.id == 13 or article.id == 15 %}
+              <div class="row_article">
+                <div class="categories_more">
+                  <p class="categories">
+                    Cat 1
+                  </p>
+                  <p class="categories">
+                    Cat 2
+                  </p>
+                </div>
+                <div class="row_more_img">
+                  <img class="row_img" src="{{ article.article_image }}" alt="" />
+                </div>
+                <div class="title_more">
+                  <p>
+                    {{ article.article_title }}
+                  </p>
+                </div>
+                <div class="more_details">
+                  <p>
+                    {{ article.article_summary }}
+                  </p>
+                </div>
+                <div class="break2">
+                </div>
+                <div class="more_author_date">
+                  <p class="inline more_author">
+                    {{ article.article_author }}
+                  </p>
+                  <p class="inline">
+                    |
+                  </p>
+                  <p class="inline more_date">
+                    {{ article.article_date|date:"d M Y" }}
+                  </p>
+                </div>
+              </div>
+              {% endif %}
+              {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+          <div class="break">
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-xs-12 nopadding">
+        <div class="sidebar">
+          <div class="box_theme">
+            <p class="offset_title_box title">
+              POLL OF THE WEEK
+            </p>
+            <form class="poll" action="index.html" method="post">
+              <p class="poll_question">
+                Poll question #1
+              </p>
+              <input class="option" type="radio" id="option1" name="name" value=""><label for="option1">Option #1</label>
+              <br>
+              <input class="option" type="radio" id="option2" name="name" value=""><label for="option2">Option #2</label>
+              <br>
+              <input class="option" type="radio" id="option2" name="name" value=""><label for="option3">Option #3</label>
+              <br>
+              <input class="option" type="radio" id="option4" name="name" value=""><label for="option4">Option #4</label>
+              <br>
+              <input class="button_submit" type="submit" name="submit" value="Submit">
+            </form>
+          </div>
+
+          <div class="break0">
+
+          </div>
+          <div class="box_theme">
+            <p class="offset_title_box title">
+              PHOTO OF THE WEEK
+            </p>
+            <div class="photo_week_box">
+              <img class="photo_week photo_gallery" src="test_img.jpg">
+            </div>
+          </div>
+          <div class="break0">
+
+          </div>
+          <div class="box_theme">
+            <p class="offset_title_box title">
+              VIDEO OF THE WEEK
+            </p>
+            <div class="video_week_box">
+              <iframe class="video_week" src="https://www.youtube.com/embed/-Bk1ybD9npc?&theme=dark&autoplay=0&autohide=2&showinfo=0&rel=0"frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <div class="break0">
+
+          </div>
+          <div class="box_theme">
+            <p class="offset_title_box title">
+              ARCHIVES
+            </p>
+            <div class="break4"></div>
+            <ul>
+              <li>
+                <a href="#" class="archives">October 2016</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="break0">
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="break">
+
+    </div>
+  </div>
+  <div class="break">
+
+  </div>
+</body>
+</html>

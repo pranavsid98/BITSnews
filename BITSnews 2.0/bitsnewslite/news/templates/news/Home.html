@@ -109,6 +109,7 @@
             <div class="big_feature">
               {% for article in article_list %}
               {% if article.id == 1 %}
+              <a href="posts/{{ article.id}}/">
               <div class="img_back_feature_big">
                 <img class="img_back" src="{{ article.article_image }}">
               </div>
@@ -146,6 +147,7 @@
               </div>
             </div>
           </div>
+        </a>
           {% endif %}
           {% endfor %}
           
@@ -153,6 +155,7 @@
             <div class="big_feature">
               {% for article in article_list %}
               {% if article.id == 2 %}
+              <a href="posts/{{ article.id}}/">
               <div class="img_back_feature_big">
                   <img class="img_back" src="{{ article.article_image }}">
               </div>
@@ -171,7 +174,7 @@
                 <div class="content_big">
                   <div class="title_big">
                     <p class="shadow_text_effect">
-                      article.article_title
+                      {{ article.article_title }}
                     </p>
                   </div>
                   <div class="details_big">
@@ -191,6 +194,7 @@
               </div>
             </div>
           </div>
+        </a>
           {% endif %}
           {% endfor %}
         </div>
@@ -200,6 +204,7 @@
         <div class="col-md-12 col-xs-12 nopadding">
           {% for article in article_list %}
           {% if article.id == 3 %}
+          <a href="posts/{{ article.id}}/">
           <div class="col-md-4 col-xs-12 nopadding">
             <div class="small_feature">
               <div class="img_back_feature_small">
@@ -240,10 +245,12 @@
               </div>
             </div>
           </div>
+        </a>
           {% endif %}
           {% endfor %}
           {% for article in article_list %}
           {% if article.id == 4 %}
+          <a href="posts/{{ article.id}}/">
           <div class="col-md-4 col-xs-12 nopadding">
             <div class="small_feature">
               <div class="img_back_feature_small">
@@ -284,10 +291,12 @@
               </div>
             </div>
           </div>
+        </a>
           {% endif %}
           {% endfor %}
           {% for article in article_list %}
           {% if article.id == 5 %}
+          <a href="posts/{{ article.id}}/">
           <div class="col-md-4 col-xs-12 nopadding">
             <div class="small_feature">
               <div class="img_back_feature_small">
@@ -328,6 +337,7 @@
               </div>
             </div>
           </div>
+        </a>
           {% endif %}
           {% endfor %}
         </div>
@@ -347,6 +357,7 @@
                 {% for article in article_list %}
                 {% if article.id > 5 %}
                 {% if article.id == 6 or article.id == 8 or article.id == 10 or article.id == 12 or article.id == 14 %}
+                <a href="posts/{{ article.id}}/">
                 <div class="row_article">
                   <div class="categories_more">
                     <p class="categories">
@@ -383,6 +394,7 @@
                     </p>
                   </div>
                 </div>
+              </a>
                 {% endif %}
                 {% endif %}
                 {% endfor %}  
@@ -392,6 +404,7 @@
               {% for article in article_list %}
               {% if article.id > 5 %}
               {% if article.id == 7 or article.id == 9 or article.id == 11 or article.id == 13 or article.id == 15 %}
+              <a href="posts/{{ article.id}}/">
               <div class="row_article">
                 <div class="categories_more">
                   <p class="categories">
@@ -428,6 +441,7 @@
                   </p>
                 </div>
               </div>
+            </a>
               {% endif %}
               {% endif %}
               {% endfor %}

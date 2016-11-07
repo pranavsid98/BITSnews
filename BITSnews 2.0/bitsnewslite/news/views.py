@@ -26,9 +26,9 @@ def index(request):
 
 def detail(request, article_id):
 	article = Article.objects.get(pk=article_id)
-	marquee_list = Marquee.objects.all()
+	
 	#date_list = DateHead.date_now
-	return render(request, 'news/detail.html', {'article': article})
+	return render(request, 'news/post.html', {'article': article})
 
 def posts(request):
 	article_list = Article.objects.order_by('-article_date')

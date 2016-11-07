@@ -88,8 +88,9 @@ edqw fqwfqwfqw fqwfqw fqwfqw diuqw hfui qwgfu ibouchqwui ghuh
     <div class="box_theme">
 
     <div class="categories_top">
-      <p class="categories"> Random 1</p>
-      <p class="categories"> Random 2</p>
+      {% for category in article.category_set.all %}
+      <p class="categories">{{ category.category }}</p>
+      {% endfor %}
     </div>
       <h2 class="post-title2">{{ article.article_title }}</h2>
         <div class="entry-meta detail_1">

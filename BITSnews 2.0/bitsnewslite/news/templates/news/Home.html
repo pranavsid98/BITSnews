@@ -117,12 +117,11 @@
               </div>
               <div class="details_feature_big nomargin nopadding">
                 <div class="categories_big text-right">
+                  {% for cat in article.category_set.all %}
                   <p class="categories">
-                    Cat 1
+                    {{ cat.category }}
                   </p>
-                  <p class="categories">
-                    Cat 2
-                  </p>
+                  {% endfor %}
                 </div>
                 <div class="content_big">
                   <div class="title_big">
@@ -164,12 +163,11 @@
               </div>
               <div class="details_feature_big nomargin nopadding">
                 <div class="categories_big text-right">
+                  {% for cat in article.category_set.all %}
                   <p class="categories">
-                    Cat 1
+                    {{ cat.category }}
                   </p>
-                  <p class="categories">
-                    Cat 2
-                  </p>
+                  {% endfor %}
                 </div>
                 <div class="content_big">
                   <div class="title_big">
@@ -215,12 +213,11 @@
               </div>
               <div class="details_feature_small nomargin nopadding">
                 <div class="categories_small text-right">
+                  {% for cat in article.category_set.all %}
                   <p class="categories">
-                    Cat 1
+                    {{ cat.category }}
                   </p>
-                  <p class="categories">
-                    Cat 2
-                  </p>
+                  {% endfor %}
                 </div>
                 <div class="content_small">
                   <div class="title_small">
@@ -261,12 +258,11 @@
               </div>
               <div class="details_feature_small nomargin nopadding">
                 <div class="categories_small text-right">
+                  {% for cat in article.category_set.all %}
                   <p class="categories">
-                    Cat 1
+                    {{ cat.category }}
                   </p>
-                  <p class="categories">
-                    Cat 2
-                  </p>
+                  {% endfor %}
                 </div>
                 <div class="content_small">
                   <div class="title_small">
@@ -307,12 +303,11 @@
               </div>
               <div class="details_feature_small nomargin nopadding">
                 <div class="categories_small text-right">
+                  {% for cat in article.category_set.all %}
                   <p class="categories">
-                    Cat 1
+                    {{ cat.category }}
                   </p>
-                  <p class="categories">
-                    Cat 2
-                  </p>
+                  {% endfor %}
                 </div>
                 <div class="content_small">
                   <div class="title_small">
@@ -360,12 +355,11 @@
                 <a href="posts/{{ article.id}}/">
                 <div class="row_article">
                   <div class="categories_more">
+                    {% for cat in article.category_set.all %}
                     <p class="categories">
-                      Cat 1
+                      {{ cat.category }}
                     </p>
-                    <p class="categories">
-                      Cat 2
-                    </p>
+                    {% endfor %}
                   </div>
                   <div class="row_more_img">
                     <img class="row_img" src="{{ article.article_image }}" alt="" />
@@ -407,12 +401,11 @@
               <a href="posts/{{ article.id}}/">
               <div class="row_article">
                 <div class="categories_more">
+                  {% for cat in article.category_set.all %}
                   <p class="categories">
-                    Cat 1
+                    {{ cat.category }}
                   </p>
-                  <p class="categories">
-                    Cat 2
-                  </p>
+                  {% endfor %}
                 </div>
                 <div class="row_more_img">
                   <img class="row_img" src="{{ article.article_image }}" alt="" />

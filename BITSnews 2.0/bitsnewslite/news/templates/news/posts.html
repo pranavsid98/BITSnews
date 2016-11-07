@@ -92,8 +92,9 @@
             </div>
             <div class="col-lg-11 col-xs-11 article_text nopadding pointer_hover">
               <div class="categories_small">
-                <p class="categories"> Random 1</p>
-                <p class="categories"> Random 2</p>
+                {% for cat in article.category_set.all %}
+                <p class="categories"> {{ cat.category }}</p>
+                {% endfor %}
               </div>
               <a href="{{ article.id }}/"><h3 class="post-title">{{ article.article_title }}</h3></a>
                 <div class="entry-meta">

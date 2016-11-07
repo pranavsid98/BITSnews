@@ -12,6 +12,27 @@ class Article(models.Model):
 	def __str__(self):
 		return self.article_title
 
+class Category(models.Model):
+	article = models.ForeignKey(Article, on_delete=models.CASCADE)
+	TECHNOLOGY = 'TECH'		
+	OASIS = 'OASIS'
+	DEPARTMENTS = 'DEP'
+	CLUBS = 'CLUB'
+	ACADEMICS = 'ACADS'
+	CATEGORY_CHOICES = (
+			(TECHNOLOGY, 'Technology'),
+			(OASIS, 'Oasis'),
+			(DEPARTMENTS, 'Departments'),
+			(CLUBS, 'Clubs'),
+			(ACADEMICS, 'Academics'),
+		)
+	category = models.CharField(
+			max_length = 10,
+			choices = CATEGORY_CHOICES,
+		)
+	def __str__(self):
+		return self.category
+
 class Picture(models.Model):
 	pics_image = models.CharField(max_length=100)
 	def __str__(self):

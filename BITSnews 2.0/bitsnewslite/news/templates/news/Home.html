@@ -89,10 +89,9 @@
         <div class="col-md-12 col-xs-12 nopadding">
           <div class="ticker_text_container text-right">
             <ul id="ticker1">
-              <li>event no#1</li>
-              <li>notif no#2 12345</li>
-              <li>another notification</li>
-              <li>damn another one?</li>
+              {% for ticker in ticker_list %}
+              <li>{{ ticker.ticker_text }}</li>
+              {% endfor %}
             </ul>
           </div>
         </div>

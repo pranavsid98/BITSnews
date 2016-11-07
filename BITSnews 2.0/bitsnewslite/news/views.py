@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
 
-from .models import Article, Picture, Video, Event, PollQuestion, PollChoice, Category
+from .models import Article, Picture, Video, Event, PollQuestion, PollChoice, Category, Ticker
 
 # Create your views here.
 def index(request):
@@ -12,6 +12,7 @@ def index(request):
 	video_list = Video.objects.all()
 	pollq_list = PollQuestion.objects.all()
 	pollc_list = PollChoice.objects.all()
+	ticker_list = Ticker.objects.all()
 	#date_list = DateHead.date_now
 	template = loader.get_template('news/Home.html')
 	context = {
@@ -20,6 +21,7 @@ def index(request):
 	'video_list': video_list,
 	'pollq_list': pollq_list,
 	'pollc_list': pollc_list,
+	'ticker_list': ticker_list,
 	}
 	return HttpResponse(template.render(context, request))
 

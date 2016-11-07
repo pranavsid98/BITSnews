@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Article, Picture, Video, Event, PollQuestion, PollChoice, Category
+from .models import Article, Picture, Video, Event, PollQuestion, PollChoice, Category, Ticker
 
 
 class ChoiceInline(admin.StackedInline):
@@ -16,4 +16,5 @@ admin.site.register(Video)
 admin.site.register(Event)
 admin.site.register(PollQuestion)
 admin.site.register(PollChoice)
+admin.site.register(Ticker)
 
